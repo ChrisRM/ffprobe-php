@@ -48,7 +48,6 @@ class FFprobe {
 	 */
 	public function run()
 	{
-		echo $this->command;
 		$process = new Process($this->command);
 		$process->run();
 
