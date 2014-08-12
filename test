@@ -1,0 +1,13 @@
+<?php
+require_once('vendor/autoload.php');
+
+use Codecandy\FFprobe\FFprobe;
+
+$file = '<file>';
+
+$ffprobe = new FFprobe($file);
+$ffprobe->show(FFprobe::STREAMS, FFprobe::FORMAT);
+$ffprobe->setFormat('json');
+$info = $ffprobe->run();
+
+print_r($info);

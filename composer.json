@@ -1,0 +1,20 @@
+{
+    "name": "codecandy/ffprobe-php",
+    "description": "Simple use of FFprobe using PHP",
+    "require": {
+        "symfony/process": "2.6.*@dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Magnussen",
+            "email": "chris@appgutta.no"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Codecandy\\FFprobe\\": "src/FFprobe/"
+        }
+    },
+    "minimum-stability": "dev"
+}
