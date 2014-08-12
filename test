@@ -3,9 +3,9 @@ require_once('vendor/autoload.php');
 
 use Codecandy\FFprobe\FFprobe;
 
-$file = '<file>';
+$file = '/Volumes/shared/video/uploaded/2014/08/12/1407830162-53e9c89241b8a.mp4';
 
-$ffprobe = new FFprobe($file);
+$ffprobe = new FFprobe($file, '/opt/local/bin/ffprobe');
 $ffprobe->show(FFprobe::STREAMS, FFprobe::FORMAT);
 $ffprobe->setFormat('json');
 $info = $ffprobe->run();

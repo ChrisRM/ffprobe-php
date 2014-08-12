@@ -22,16 +22,19 @@ class FFprobe {
 	 * 
 	 * @var string
 	 */
-	protected $command = 'ffprobe -v quiet';
+	protected $command = '';
 
 	/**
 	 * Initialize command
 	 * 
-	 * @param string $file 
+	 * @param string $file
+	 * @param string $command Path to ffprobe if not in /usr/local/bin
 	 * @return void
 	 */
-	public function __construct($file)
+	public function __construct($file, $command = 'ffprobe')
 	{
+		$this->command = $command.' -v quiet';
+
 		if (file_exists($file) && is_file($file))
 		{
 			$this->appendToCommand($file);
@@ -45,6 +48,7 @@ class FFprobe {
 	 */
 	public function run()
 	{
+		echo $this->command;
 		$process = new Process($this->command);
 		$process->run();
 
